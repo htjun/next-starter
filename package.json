@@ -1,5 +1,5 @@
 {
-  "name": "avatarkit",
+  "name": "starter-app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "ultracite check",
     "format": "ultracite fix",
+    "starter:init": "node scripts/init-starter.mjs",
     "test": "vitest",
     "test:watch": "vitest --watch",
     "test:run": "vitest run",

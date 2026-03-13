@@ -5,8 +5,8 @@ import type { Metadata } from "next"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  description: "Starter project",
-  title: "App",
+  description: "Starter App built from a private Next.js starter.",
+  title: "Starter App",
 }
 
 export default function RootLayout({
