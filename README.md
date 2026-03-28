@@ -44,6 +44,37 @@ pnpm install
 pnpm dev
 ```
 
+## Typography
+
+This starter pins `geist@1.7.0` and wires it through `next/font`, so `font-sans`
+uses Geist Sans and `font-mono` uses Geist Mono with system fallbacks.
+
+OpenType helpers are available through an `ot-features` host class plus flat
+`ot-*` utilities:
+
+```tsx
+<p className="font-sans ot-features ot-ss01 ot-case">
+  Shipping faster with calmer forms
+</p>
+
+<code className="font-mono ot-features ot-ss03">0OIl</code>
+```
+
+Supported utilities:
+
+- `ot-ss01` through `ot-ss11`
+- `ot-case`, `ot-frac`, `ot-ordn`, `ot-sups`, `ot-subs`, `ot-sinf`
+- `ot-liga`, `ot-dlig`, `ot-tnum`, `ot-pnum`
+
+Notes:
+
+- Sans-only features such as `ot-liga`, `ot-dlig`, `ot-tnum`, and `ot-pnum`
+  are ignored gracefully when the active font does not support them.
+- Prefer one of `ot-tnum` or `ot-pnum` per element.
+- Prefer one of `ot-sups`, `ot-subs`, or `ot-sinf` per element.
+- Standard `font-*` weight utilities continue to drive the variable `wght`
+  axis; no custom `font-variation-settings` helpers are needed.
+
 ## Verification
 
 ```bash
