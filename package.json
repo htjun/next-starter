@@ -1,7 +1,12 @@
 {
   "name": "starter-app",
   "version": "0.1.0",
-  "private": true,
+  "license": "MIT",
+  "description": "Next.js starter with Tailwind v4, shadcn, Zustand, Remixicon, Ultracite, Vitest, and Storybook",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasonjun/next-starter.git"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

@@ -1,12 +1,11 @@
 # Next Starter
 
-Private Next.js starter with Tailwind v4, shadcn, Zustand, Remixicon, Ultracite,
-Vitest, and Storybook already wired in.
+Next.js starter with Tailwind v4, shadcn, Zustand, Remixicon, Ultracite,
+Vitest, and Storybook.
 
-## Create a project from this starter
+## Quick start
 
-After you push this starter to a private GitHub repo named `next-starter`,
-create a new app with:
+Clone with `degit`, run the init script, install, and go:
 
 ```bash
 pnpm dlx degit --mode=git git@github.com:<owner>/next-starter.git my-app
@@ -16,85 +15,71 @@ pnpm install
 pnpm dev
 ```
 
-If you prefer the package script after cloning:
+The init script replaces placeholder names across `package.json`, the
+layout, the home page, and `.env.example`. You can also run it via
+`pnpm run starter:init -- --name my-app --title "My App"`.
 
-```bash
-pnpm run starter:init -- --name my-app --title "My App"
+## What's included
+
+- **Next.js 16** with the App Router
+- **Tailwind v4** with theme tokens in `app/globals.css`
+- **shadcn** UI primitives in `components/ui/`
+- **Zustand** for client state
+- **Geist** typeface (sans + mono) with OpenType utility classes
+- **Remixicon** via CSS
+- **Ultracite** (ESLint + oxlint + oxfmt) for linting and formatting
+- **Vitest** with jsdom
+- **Storybook** via `@storybook/nextjs-vite`
+
+## Project structure
+
+```
+app/            App Router pages, layouts, fonts, and global CSS
+components/ui/  shadcn primitives
+lib/            Shared utilities (cn helper, future domain logic)
+scripts/        Starter setup (init-starter.mjs)
+docs/ai/        AI agent context (see below)
 ```
 
-Initialize git manually after copying if you want a fresh repository:
+The `@/*` path alias maps to the repo root.
 
-```bash
-git init
-```
+## Commands
 
-## Publish this starter
-
-Push this repo to GitHub before using the `degit` flow:
-
-```bash
-git remote add origin git@github.com:<owner>/next-starter.git
-git push -u origin main
-```
-
-## Local development
-
-```bash
-pnpm install
-pnpm dev
-```
+| Command                  | What it does                  |
+| ------------------------ | ----------------------------- |
+| `pnpm dev`               | Start the dev server          |
+| `pnpm build`             | Production build              |
+| `pnpm lint` / `format`   | Ultracite check / autofix     |
+| `pnpm test:run`          | Run Vitest once               |
+| `pnpm storybook`         | Start Storybook on port 6006  |
+| `pnpm build-storybook`   | Build static Storybook        |
+| `pnpm starter:init`      | Rename starter placeholders   |
 
 ## Typography
 
-This starter pins `geist@1.7.0` and exports the fonts from `app/fonts.ts`, so
-`font-sans` uses Geist Sans and `font-mono` uses Geist Mono with system fallbacks.
+Geist Sans (`font-sans`) and Geist Mono (`font-mono`) are wired through
+`app/fonts.ts`. OpenType utilities (`ot-ss01`, `ot-case`, `ot-tnum`,
+etc.) are available under an `ot-features` host class -- see
+`app/globals.css` for the full list.
 
-OpenType helpers are available through an `ot-features` host class plus flat
-`ot-*` utilities:
+## AI agent context
 
-```tsx
-<p className="font-sans ot-features ot-ss01 ot-case">
-  Shipping faster with calmer forms
-</p>
+This repo ships structured context for AI coding agents under `docs/ai/`.
+Tool-specific adapters (`AGENTS.md`, `CLAUDE.md`, `.cursor/rules/`) are
+thin pointers into that shared context.
 
-<code className="font-mono ot-features ot-ss03">0OIl</code>
-```
+| File                                   | Purpose                              |
+| -------------------------------------- | ------------------------------------ |
+| `docs/ai/core.md`                      | Architecture, commands, conventions  |
+| `docs/ai/areas/app-and-ui.md`          | UI structure and component patterns  |
+| `docs/ai/areas/tooling-and-scripts.md` | Scripts, testing, linting, Storybook |
+| `docs/ai/decisions/`                   | Architecture decision records        |
+| `docs/ai/active.md`                    | Transient handoff notes              |
 
-Supported utilities:
+Agents read `core.md` first, then the area doc matching their task.
+See [ADR 0001](docs/ai/decisions/0001-repo-first-ai-harness.md) for
+the rationale behind this approach.
 
-- `ot-ss01` through `ot-ss11`
-- `ot-case`, `ot-frac`, `ot-ordn`, `ot-sups`, `ot-subs`, `ot-sinf`
-- `ot-liga`, `ot-dlig`, `ot-tnum`, `ot-pnum`
+## License
 
-Notes:
-
-- Sans-only features such as `ot-liga`, `ot-dlig`, `ot-tnum`, and `ot-pnum`
-  are ignored gracefully when the active font does not support them.
-- Prefer one of `ot-tnum` or `ot-pnum` per element.
-- Prefer one of `ot-sups`, `ot-subs`, or `ot-sinf` per element.
-- Standard `font-*` weight utilities continue to drive the variable `wght`
-  axis; no custom `font-variation-settings` helpers are needed.
-
-## Verification
-
-```bash
-pnpm run lint
-pnpm run test:run
-pnpm run build
-pnpm run build-storybook
-```
-
-## Maintainers
-
-Keep this repo starter-only. Avoid adding product-specific code or secrets.
-
-Before tagging or sharing starter updates, run:
-
-```bash
-pnpm install
-pnpm run format
-pnpm run lint
-pnpm run test:run
-pnpm run build
-pnpm run build-storybook
-```
+MIT -- see [LICENSE](LICENSE).
