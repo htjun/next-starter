@@ -4,7 +4,8 @@ Read this when touching `app/**`, `components/**`, or `lib/**`.
 
 ## Current shape
 
-- `app/layout.tsx` wires Geist fonts and global CSS.
+- `app/layout.tsx` wires fonts, Remixicon CSS, and global CSS.
+- `app/fonts.ts` re-exports `GeistSans` and `GeistMono` from the `geist` package.
 - `app/page.tsx` is the placeholder home page.
 - `app/globals.css` holds the Tailwind v4 theme tokens and utility layer.
 - `components/ui/button.tsx` is the only shared UI primitive today.

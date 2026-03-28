@@ -50,7 +50,8 @@ Run before considering work done:
 
 - Use shadcn UI primitives from `components/ui/`. Add new ones with `pnpm dlx shadcn@latest add <component>`.
 - Merge class names with `cn()` from `@/lib/utils`.
-- Fonts: Geist Sans (`font-sans`) and Geist Mono (`font-mono`) via `next/font`.
+- Fonts: Geist Sans (`font-sans`) and Geist Mono (`font-mono`) via the `geist` package, exported from `app/fonts.ts`.
+- Icons: Remixicon CSS is loaded in `app/layout.tsx`. Use `<i className="ri-*">` for icons.
 - Client state: Zustand. Create stores under `lib/`.
 - Styling: Tailwind v4 with theme tokens in `app/globals.css`. No inline `style` props.
 

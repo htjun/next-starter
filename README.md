@@ -1,7 +1,7 @@
 # Next Starter
 
-Private Next.js starter with Tailwind v4, shadcn, Zustand, Ultracite, Vitest,
-and Storybook already wired in.
+Private Next.js starter with Tailwind v4, shadcn, Zustand, Remixicon, Ultracite,
+Vitest, and Storybook already wired in.
 
 ## Create a project from this starter
 
@@ -46,8 +46,8 @@ pnpm dev
 
 ## Typography
 
-This starter pins `geist@1.7.0` and wires it through `next/font`, so `font-sans`
-uses Geist Sans and `font-mono` uses Geist Mono with system fallbacks.
+This starter pins `geist@1.7.0` and exports the fonts from `app/fonts.ts`, so
+`font-sans` uses Geist Sans and `font-mono` uses Geist Mono with system fallbacks.
 
 OpenType helpers are available through an `ot-features` host class plus flat
 `ot-*` utilities:
