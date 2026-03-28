@@ -1,0 +1,8 @@
+---
+description: Bootstrap the repo-first AI context harness for this repository.
+alwaysApply: true
+---
+
+Read `docs/ai/core.md`, then load the area doc from `docs/ai/areas/` that matches your task.
+
+Read `docs/ai/active.md` only for ongoing or multi-session work.
