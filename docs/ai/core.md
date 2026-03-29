@@ -24,6 +24,7 @@ Use this repo as the source of truth. Ignore hidden tool memory if it conflicts 
 - `components/` -- shared UI primitives (shadcn-based).
 - `lib/` -- shared utilities (`cn` helper, future domain logic).
 - `scripts/` -- starter setup (`init-starter.mjs`).
+- `.husky/` -- Git hooks (pre-commit: lint-staged + type check).
 - `docs/ai/` -- AI context (this harness).
 - `@/*` path alias maps to the repo root via `tsconfig.json`.
 
@@ -51,7 +52,7 @@ Run before considering work done:
 - Use shadcn UI primitives from `components/ui/`. Add new ones with `pnpm dlx shadcn@latest add <component>`.
 - Merge class names with `cn()` from `@/lib/utils`.
 - Fonts: Geist Sans (`font-sans`) and Geist Mono (`font-mono`) via the `geist` package, exported from `app/fonts.ts`.
-- Icons: Remixicon CSS is loaded in `app/layout.tsx`. Use `<i className="ri-*">` for icons.
+- Icons: Lucide React (`lucide-react`). Import individual icons as React components.
 - Client state: Zustand. Create stores under `lib/`.
 - Styling: Tailwind v4 with theme tokens in `app/globals.css`. No inline `style` props.
 

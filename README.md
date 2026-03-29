@@ -1,6 +1,6 @@
 # Next Starter
 
-Next.js starter with Tailwind v4, shadcn, Zustand, Remixicon, Ultracite,
+Next.js starter with Tailwind v4, shadcn, Zustand, Lucide React, Ultracite,
 Vitest, and Storybook.
 
 ## Quick start
@@ -25,9 +25,10 @@ layout, the home page, and `.env.example`. You can also run it via
 - **Tailwind v4** with theme tokens in `app/globals.css`
 - **shadcn** UI primitives in `components/ui/`
 - **Zustand** for client state
-- **Geist** typeface (sans + mono) with OpenType utility classes
-- **Remixicon** via CSS
+- **Geist** typeface (sans + mono)
+- **Lucide React** for icons
 - **Ultracite** (ESLint + oxlint + oxfmt) for linting and formatting
+- **Husky** + **lint-staged** pre-commit hook (lint, format, type check)
 - **Vitest** with jsdom
 - **Storybook** via `@storybook/nextjs-vite`
 
@@ -38,6 +39,7 @@ app/            App Router pages, layouts, fonts, and global CSS
 components/ui/  shadcn primitives
 lib/            Shared utilities (cn helper, future domain logic)
 scripts/        Starter setup (init-starter.mjs)
+.husky/         Git hooks (pre-commit)
 docs/ai/        AI agent context (see below)
 ```
 
@@ -45,22 +47,20 @@ The `@/*` path alias maps to the repo root.
 
 ## Commands
 
-| Command                  | What it does                  |
-| ------------------------ | ----------------------------- |
-| `pnpm dev`               | Start the dev server          |
-| `pnpm build`             | Production build              |
-| `pnpm lint` / `format`   | Ultracite check / autofix     |
-| `pnpm test:run`          | Run Vitest once               |
-| `pnpm storybook`         | Start Storybook on port 6006  |
-| `pnpm build-storybook`   | Build static Storybook        |
-| `pnpm starter:init`      | Rename starter placeholders   |
+| Command                | What it does                 |
+| ---------------------- | ---------------------------- |
+| `pnpm dev`             | Start the dev server         |
+| `pnpm build`           | Production build             |
+| `pnpm lint` / `format` | Ultracite check / autofix    |
+| `pnpm test:run`        | Run Vitest once              |
+| `pnpm storybook`       | Start Storybook on port 6006 |
+| `pnpm build-storybook` | Build static Storybook       |
+| `pnpm starter:init`    | Rename starter placeholders  |
 
 ## Typography
 
 Geist Sans (`font-sans`) and Geist Mono (`font-mono`) are wired through
-`app/fonts.ts`. OpenType utilities (`ot-ss01`, `ot-case`, `ot-tnum`,
-etc.) are available under an `ot-features` host class -- see
-`app/globals.css` for the full list.
+`app/fonts.ts`.
 
 ## AI agent context
 

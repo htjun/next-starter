@@ -1,5 +1,3 @@
-import "remixicon/fonts/remixicon.css"
-
 import type { Metadata } from "next"
 
 import { GeistMono, GeistSans } from "./fonts"
@@ -17,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="antialiased">{children}</body>
     </html>
   )
 }
