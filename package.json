@@ -11,12 +11,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "docs:check": "node scripts/docs-check.mjs",
     "lint": "ultracite check",
     "format": "ultracite fix",
     "starter:init": "node scripts/init-starter.mjs",
     "test": "vitest",
     "test:watch": "vitest --watch",
     "test:run": "vitest run",
+    "typecheck": "next typegen && tsc --noEmit --incremental false",
     "check": "ultracite check",
     "fix": "ultracite fix",
     "storybook": "storybook dev -p 6006",
@@ -74,5 +76,10 @@
     "*.{ts,tsx,js,jsx,mjs}": [
       "ultracite fix"
     ]
-  }
+  },
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0",
+    "pnpm": ">=10.13.1"
+  },
+  "packageManager": "pnpm@10.13.1"
 }

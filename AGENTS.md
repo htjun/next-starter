@@ -1,9 +1,35 @@
-# Agent Bootstrap
+# AGENTS.md
 
-This repository keeps AI context under `docs/ai/`.
+Entry point for agent context. Keep this file short.
 
-1. Read `docs/ai/core.md`.
-2. Load the area doc matching your task from `docs/ai/areas/`.
-3. Read `docs/ai/active.md` only for ongoing multi-session work.
+## Repo
 
-Keep durable guidance in `docs/ai/`, not in tool-specific memory.
+- This repository is a generic Next.js starter.
+- Main surfaces: `app/`, `components/ui/`, `lib/`, and `scripts/init-starter.mjs`.
+- Keep the repo starter-only. Do not add product-specific code or secrets.
+- Use source files as truth. Docs are only a routing layer.
+
+## Commands
+
+- `pnpm dev`
+- `pnpm run docs:check`
+- `pnpm run lint`
+- `pnpm run typecheck`
+- `pnpm run build`
+- `pnpm run test:run`
+- `pnpm run build-storybook` (Node `20.19.0+`)
+
+## Read Next
+
+- `docs/index.md`
+- `docs/project-overview.md`
+- `docs/engineering-guide.md`
+- `docs/decisions.md`
+- `docs/plans/README.md`
+
+## Rules
+
+- Keep docs terse. Link to source files instead of restating them.
+- Update `docs/decisions.md` when a durable repo rule changes.
+- Add a short plan under `docs/plans/active/` only for multi-session work.
+- Move done or stale plans to `docs/plans/archive/`.

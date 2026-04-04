@@ -32,53 +32,50 @@ layout, the home page, and `.env.example`. You can also run it via
 - **Vitest** with jsdom
 - **Storybook** via `@storybook/nextjs-vite`
 
-## Project structure
-
-```
-app/            App Router pages, layouts, fonts, and global CSS
-components/ui/  shadcn primitives
-lib/            Shared utilities (cn helper, future domain logic)
-scripts/        Starter setup (init-starter.mjs)
-.husky/         Git hooks (pre-commit)
-docs/ai/        AI agent context (see below)
-```
-
-The `@/*` path alias maps to the repo root.
-
 ## Commands
 
 | Command                | What it does                 |
 | ---------------------- | ---------------------------- |
 | `pnpm dev`             | Start the dev server         |
+| `pnpm docs:check`      | Check doc budgets/structure  |
 | `pnpm build`           | Production build             |
+| `pnpm typecheck`       | Run `tsc --noEmit`           |
 | `pnpm lint` / `format` | Ultracite check / autofix    |
 | `pnpm test:run`        | Run Vitest once              |
 | `pnpm storybook`       | Start Storybook on port 6006 |
 | `pnpm build-storybook` | Build static Storybook       |
 | `pnpm starter:init`    | Rename starter placeholders  |
 
+## Project structure
+
+```
+app/            App Router pages, layouts, fonts, and global CSS
+components/ui/  shadcn primitives
+lib/            Shared utilities (cn helper, future domain logic)
+scripts/        Starter setup and repo checks
+.husky/         Git hooks (pre-commit)
+docs/           Minimal repo context for agents
+```
+
+The `@/*` path alias maps to the repo root.
+
 ## Typography
 
 Geist Sans (`font-sans`) and Geist Mono (`font-mono`) are wired through
 `app/fonts.ts`.
 
-## AI agent context
+## Agent context
 
-This repo ships structured context for AI coding agents under `docs/ai/`.
-Tool-specific adapters (`AGENTS.md`, `CLAUDE.md`, `.cursor/rules/`) are
-thin pointers into that shared context.
+Start with `AGENTS.md`. Durable repo context lives under `docs/`.
 
-| File                                   | Purpose                              |
-| -------------------------------------- | ------------------------------------ |
-| `docs/ai/core.md`                      | Architecture, commands, conventions  |
-| `docs/ai/areas/app-and-ui.md`          | UI structure and component patterns  |
-| `docs/ai/areas/tooling-and-scripts.md` | Scripts, testing, linting, Storybook |
-| `docs/ai/decisions/`                   | Architecture decision records        |
-| `docs/ai/active.md`                    | Transient handoff notes              |
+The harness is intentionally small:
 
-Agents read `core.md` first, then the area doc matching their task.
-See [ADR 0001](docs/ai/decisions/0001-repo-first-ai-harness.md) for
-the rationale behind this approach.
+- `AGENTS.md`: entry point
+- `docs/index.md`: routing map
+- `docs/project-overview.md`: starter purpose and stable surfaces
+- `docs/engineering-guide.md`: runtime, commands, verification
+- `docs/decisions.md`: durable repo rules only
+- `docs/plans/`: optional multi-session plans only
 
 ## License
 
