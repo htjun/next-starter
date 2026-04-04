@@ -4,9 +4,9 @@
   Why: downstream apps should customize from a clean reusable baseline.
   Affects: `README.md`, `AGENTS.md`, starter surface files
 
-- `2026-04-05`: Use `AGENTS.md` plus small root docs as the shared agent
-  harness.
-  Why: keeps initial token cost low across tools.
+- `2026-04-05`: Use `AGENTS.md` -> `docs/index.md` -> `docs/status.md`
+  before deeper docs.
+  Why: keeps initial token cost low and makes current state easy to find.
   Affects: `AGENTS.md`, `CLAUDE.md`, `docs/*`
 
 - `2026-04-05`: Keep root docs budgeted and use plans only for multi-session

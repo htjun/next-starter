@@ -72,6 +72,7 @@ The harness is intentionally small:
 
 - `AGENTS.md`: entry point
 - `docs/index.md`: routing map
+- `docs/status.md`: current state and active plan pointer
 - `docs/project-overview.md`: starter purpose and stable surfaces
 - `docs/engineering-guide.md`: runtime, commands, verification
 - `docs/decisions.md`: durable repo rules only

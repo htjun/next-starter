@@ -22,14 +22,11 @@ Entry point for agent context. Keep this file short.
 ## Read Next
 
 - `docs/index.md`
-- `docs/project-overview.md`
-- `docs/engineering-guide.md`
-- `docs/decisions.md`
-- `docs/plans/README.md`
 
 ## Rules
 
 - Keep docs terse. Link to source files instead of restating them.
+- Update `docs/status.md` when current state or active work changes.
 - Update `docs/decisions.md` when a durable repo rule changes.
 - Add a short plan under `docs/plans/active/` only for multi-session work.
 - Move done or stale plans to `docs/plans/archive/`.

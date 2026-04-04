@@ -9,6 +9,7 @@ const ROOT_DOC_LIMITS = new Map([
   ["AGENTS.md", 40],
   ["README.md", 85],
   ["docs/index.md", 25],
+  ["docs/status.md", 20],
   ["docs/project-overview.md", 30],
   ["docs/engineering-guide.md", 40],
   ["docs/decisions.md", 30],
@@ -20,6 +21,7 @@ const PLAN_LIMITS = {
   archive: 120,
 }
 const DOCS_INDEX_LINKS = [
+  "status.md",
   "project-overview.md",
   "engineering-guide.md",
   "decisions.md",
@@ -85,6 +87,7 @@ const main = async () => {
 
   const agents = await readText("AGENTS.md")
   const docsIndex = await readText("docs/index.md")
+  const status = await readText("docs/status.md")
 
   if (!agents.includes("docs/index.md")) {
     errors.push("AGENTS.md must point to docs/index.md")
@@ -93,6 +96,12 @@ const main = async () => {
   for (const link of DOCS_INDEX_LINKS) {
     if (!docsIndex.includes(link)) {
       errors.push(`docs/index.md must mention ${link}`)
+    }
+  }
+
+  for (const pattern of ["State:", "Active plan:"]) {
+    if (!status.includes(pattern)) {
+      errors.push(`docs/status.md must include ${pattern}`)
     }
   }
 
