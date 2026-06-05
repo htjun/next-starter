@@ -37,7 +37,7 @@ const countLines = (text) => {
 }
 
 const readText = (relativePath) =>
-  readFile(path.join(ROOT, relativePath), "utf8")
+  readFile(path.join(ROOT, relativePath), "utf-8")
 
 const listMarkdownFiles = async (relativeDir) => {
   const absoluteDir = path.join(ROOT, relativeDir)

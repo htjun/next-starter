@@ -44,7 +44,7 @@ const parseArgs = (argv) => {
   return args
 }
 
-const validateName = (name) => /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(name)
+const validateName = (name) => /^[a-z0-9]+(?:-[a-z0-9]+)*$/u.test(name)
 
 const toTitleCase = (name) =>
   name
@@ -54,7 +54,7 @@ const toTitleCase = (name) =>
     .join(" ")
 
 const replaceInFile = async (path, replacements) => {
-  const original = await readFile(path, "utf8")
+  const original = await readFile(path, "utf-8")
   let next = original
 
   for (const [from, to] of replacements) {
@@ -67,7 +67,7 @@ const replaceInFile = async (path, replacements) => {
 }
 
 const updatePackageJson = async (name) => {
-  const raw = await readFile("package.json", "utf8")
+  const raw = await readFile("package.json", "utf-8")
   const pkg = JSON.parse(raw)
 
   pkg.name = name
